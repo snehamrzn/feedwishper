@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Feedwhisper — X voice companion",
+  "version": "0.1.0",
+  "description": "Talk to your X home timeline. A voice agent summarizes your feed and answers follow-up questions.",
+  "permissions": ["storage", "sidePanel", "tabs", "scripting"],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://twitter.com/*",
+    "http://localhost:8787/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Open Feedwhisper"
+  },
+  "side_panel": {
+    "default_path": "side-panel/side-panel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["content/selectors.js", "content/x-scraper.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' http://localhost:8787 https://localhost:8787 wss://api.elevenlabs.io https://api.elevenlabs.io"
+  }
+}
