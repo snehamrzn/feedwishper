@@ -1,6 +1,6 @@
-# Feedwhisper — X (Twitter) voice companion
+# Feedwhisper - X (Twitter) voice companion
 
-A sideloaded Chrome extension that turns your X home timeline into a conversational voice agent. Open the side panel, tap the mic, and a friendly voice gives you the highlights of what your follows are posting — you can interrupt and ask follow-ups naturally.
+A sideloaded Chrome extension that turns your X home timeline into a conversational voice agent. Open the side panel, tap the mic, and a friendly voice gives you the highlights of what your follows are posting - you can interrupt and ask follow-ups naturally.
 
 **Stack:** Chrome MV3 extension + tiny Express backend + ElevenLabs Conversational AI (voice + interruption) + Claude Sonnet (the brain, via a custom-LLM endpoint on the backend).
 
