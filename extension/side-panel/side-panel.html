@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Feedwhisper</title>
+    <link rel="stylesheet" href="side-panel.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Feedwhisper</span>
+      </div>
+      <div class="status" id="status">idle</div>
+    </header>
+
+    <main class="stage">
+      <div class="feed-chip" id="feedChip">0 tweets captured</div>
+
+      <button class="mic" id="mic" aria-label="Start talking">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" />
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+          <line x1="12" y1="19" x2="12" y2="23" />
+          <line x1="8" y1="23" x2="16" y2="23" />
+        </svg>
+      </button>
+      <div class="mic-label" id="micLabel">Tap to start</div>
+    </main>
+
+    <section class="transcript" id="transcript" aria-live="polite"></section>
+
+    <footer class="hint" id="hint">
+      Open x.com/home and scroll a bit so I have tweets to talk about.
+    </footer>
+
+    <script src="config.local.js"></script>
+    <script src="elevenlabs-conv.js"></script>
+    <script src="side-panel.js"></script>
+  </body>
+</html>
