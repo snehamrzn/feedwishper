@@ -156,17 +156,11 @@ In the ElevenLabs dashboard, open your agent and click **Test agent**. Speak. Yo
 - The ElevenLabs agent is set to **Private**, so a signed URL is required to open a conversation at all.
 - If a secret is ever committed by accident, rotate it (regenerate the API key / shared secret) rather than just removing it from a later commit — it's still in git history otherwise.
 
-## Risks accepted
-
-- **X account warning** is possible. Mitigations: passive scraping only (no auto-scroll, no clicks), no network calls to x.com from the extension. Use a secondary account.
-- **Selector breakage** when X redesigns the home timeline. Hot-fix `extension/content/selectors.js`.
-- **Cost runaway** with a barge-in feedback loop. Set a $10/month spend cap on both Anthropic and ElevenLabs dashboards before demoing.
-- **Tunnel goes down** — agent goes mute. Use a named cloudflared tunnel so the URL doesn't rotate.
 
 ## What's not built (yet)
 
 - Persistent post storage (in-memory only — restart Chrome and you lose the cache).
 - Cross-session conversation memory.
-- Multi-platform adapters (LinkedIn, Bluesky, etc.).
+- Multi-platform adapters (LinkedIn, etc.).
 - Tool calls (e.g., "draft a reply", "add to calendar").
 - Web Store distribution (this is for sideloading only).
